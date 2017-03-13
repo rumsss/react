@@ -1,4 +1,6 @@
 import React from 'react';
+import Button from './button';
+import GlyphIcon from './glyphIcon';
 
 class TextBox extends React.Component {
 	constructor(props) {
@@ -31,8 +33,8 @@ class TextBox extends React.Component {
 				<input type='text' ref='messageTextBox' disabled={!this.state.isEditing}/>
 				{
 					this.state.isEditing ?
-						<button onClick={this.update.bind(this)}>Update</button> :
-						<button onClick={this.edit.bind(this)}>Edit</button>
+						<Button onClick={this.update.bind(this)}><GlyphIcon icon='ok'/> Update</Button> :
+						<Button onClick={this.edit.bind(this)}><GlyphIcon icon='pencil'/>Edit</Button>
 				}
 			</div>
 		);
