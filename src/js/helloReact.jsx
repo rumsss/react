@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import HelloMessage from './helloMessage';
 import TextBox from './textBox';
+import Button from './button';
 
 class HelloReact extends React.Component {
 	constructor (props) {
@@ -18,12 +19,22 @@ class HelloReact extends React.Component {
 		this.setState(newState);
 	}
 
+	reload() {
+		ReactDOM.unmountComponentAtNode(
+			document.getElementById('app')
+		);
+		ReactDOM.render(<HelloReact/>,
+			document.getElementById('app')
+		);
+	}
+
 	render () {
 		return (
 			<div>
 				<HelloMessage titre={'Hello ' + this.state.firstName + ' ' + this.state.lastName}/>
 				<TextBox label="First Name" update={this.update.bind(this, 'firstName')}/>
 				<TextBox label="Last Name" update={this.update.bind(this, 'lastName')}/>
+				<Button onClick={this.reload}>reload</Button>
 			</div>
 		);
 	}
