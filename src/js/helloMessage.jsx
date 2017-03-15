@@ -14,7 +14,7 @@ class HelloMessage extends React.Component {
 		console.log('componentWillUnMount mount event');
 	}
 
-	render () {
+	render() {
 
 		console.log('render event');
 		return (
@@ -26,7 +26,7 @@ class HelloMessage extends React.Component {
 }
 
 HelloMessage.defaultProps = {
-	titre : 'titre par défaut'
+	titre: 'titre par défaut'
 }
 
 export default HelloMessage;

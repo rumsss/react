@@ -20,7 +20,7 @@ class TextBox extends React.Component {
 		});
 	}
 
-	edit () {
+	edit() {
 		this.setState({
 			isEditing: true
 		});
@@ -39,7 +39,8 @@ class TextBox extends React.Component {
 			</div>
 		);
 	}
-};
+}
+;
 
 TextBox.defaultProps = {
 	label: 'libellé'

@@ -5,7 +5,7 @@ import TextBox from './textBox';
 import Button from './button';
 
 class HelloReact extends React.Component {
-	constructor (props) {
+	constructor(props) {
 		super(props);
 		this.state = {
 			firstName: '',
@@ -13,7 +13,7 @@ class HelloReact extends React.Component {
 		}
 	}
 
-	update (key, value) {
+	update(key, value) {
 		var newState = {};
 		newState[key] = value;
 		this.setState(newState);
@@ -28,20 +28,21 @@ class HelloReact extends React.Component {
 		);
 	}
 
-	render () {
+	render() {
 		return (
 			<div>
 				<HelloMessage titre={'Hello ' + this.state.firstName + ' ' + this.state.lastName}/>
 				<TextBox label="First Name" update={this.update.bind(this, 'firstName')}/>
 				<TextBox label="Last Name" update={this.update.bind(this, 'lastName')}/>
 				<Button onClick={this.reload}>reload</Button>
+
 			</div>
 		);
 	}
 }
 
 HelloReact.defaultProps = {
-	titre : 'my react'
+	titre: 'my react',
 }
 
 const app = document.getElementById('app');
