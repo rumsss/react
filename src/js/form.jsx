@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 class TextBox extends React.Component {
 	render() {
 		return (
-			<input className='form-control' name={this.props.name}
+			<input key={this.props.clef} className='form-control' name={this.props.name}
 				   type='text' value={this.props.value}
 				   onChange={this.props.onChange}/>
 		);
@@ -39,11 +39,14 @@ class Form extends React.Component {
 	}
 
 	render() {
+		var self = this;
 		return (
 			<form onSubmit={this.onSubmit.bind(this)}>
-				<TextBox name='firstName' value={this.state.form.firstName} onChange={this.onChange.bind(this)}/>
-				<TextBox name='lastName' value={this.state.form.lastName} onChange={this.onChange.bind(this)}/>
-				<button className='btn btn-success' type='submit'>Submit</button>
+				{Object.keys(this.state.form).map(
+					(key, i) => <TextBox clef={i} name={key} value={self.state.form[key]}
+										 onChange={self.onChange.bind(self)}/>
+				)}
+				<button key="3" className='btn btn-success' type='submit'>Submit</button>
 			</form>
 		);
 	}
