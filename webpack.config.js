@@ -4,7 +4,7 @@ var buildPath = path.join(__dirname, 'dist');
 
 module.exports = {
 	context: srcPath,
-	entry: path.join(srcPath, 'userList.jsx'),
+	entry: path.join(srcPath, 'helloMixins.jsx'),
 	output: {
 		path: buildPath,
 		filename: "bundle.js"
