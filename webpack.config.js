@@ -4,7 +4,7 @@ var buildPath = path.join(__dirname, 'dist');
 
 module.exports = {
 	context: srcPath,
-	entry: path.join(srcPath, 'form.jsx'),
+	entry: path.join(srcPath, 'formWithValidation.jsx'),
 	output: {
 		path: buildPath,
 		filename: "bundle.js"
@@ -23,5 +23,9 @@ module.exports = {
 				}
 			}
 		]
+	},
+	node: {
+		dns: 'mock',
+		net: 'mock'
 	}
 };
